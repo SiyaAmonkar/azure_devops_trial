@@ -5,6 +5,9 @@ stages:
   - job: BuildJob
     steps:
     - script: echo Building!
+    - maven:
+      goals: clean install
+      pom-file: "musicstore/pom.xml"
 - stage: Test
   jobs:
   - job: TestOnWindows
