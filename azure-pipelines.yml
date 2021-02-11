@@ -5,15 +5,15 @@ stages:
   - job: BuildJob
     steps:
      - task: Maven@3
-        inputs:
-        mavenPomFile: 'musicstore/pom.xml'
-        mavenOptions: '-Xmx3072m'
-        javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '1.8'
-        jdkArchitectureOption: 'x64'
-        publishJUnitResults: true
-        testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        goals: 'clean package'
+       inputs:
+         mavenPomFile: 'musicstore/pom.xml'
+         mavenOptions: '-Xmx3072m'
+         javaHomeOption: 'JDKVersion'
+         jdkVersionOption: '1.8'
+         jdkArchitectureOption: 'x64'
+         publishJUnitResults: true
+         testResultsFiles: '**/surefire-reports/TEST-*.xml'
+         goals: 'clean package'
 - stage: Test
   jobs:
   - job: TestOnWindows
